@@ -95,7 +95,8 @@ export class Progress extends Component<ProgressProps, any> {
       target,
       {
         toValue,
-        duration: duration
+        duration: duration,
+        useNativeDriver: false
       }
     ).start()
   }

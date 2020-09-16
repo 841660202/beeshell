@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, View, Text, StyleSheet, Dimensions, StatusBar, Platform } from 'react-native'
+import { ScrollView, View, Text, StyleSheet, Dimensions, StatusBar, Platform, UIManager, findNodeHandle } from 'react-native'
 import { Button, SlideModal, SlideModalProps, BottomModal } from '../../src/'
 import styles from '../common/styles'
 
@@ -144,7 +144,8 @@ export default class SlideModalScreen extends Component<any, any> {
             this.btnEl2 = element
           }}
           onPress={() => {
-            this.btnEl2.measure((fx, fy, width, height, px, py) => {
+            const handle = findNodeHandle(this.btnEl2)
+            UIManager.measure(handle, (fx, fy, width, height, px, py) => {
               this.setState({
                 offsetX2: px + 130,
                 offsetY2: py

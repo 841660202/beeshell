@@ -54,7 +54,7 @@ export class FormItem extends Component<FormItemProps, FormItemState> {
       <View>
         <View style={[styles.formItem, this.props.style]}>
           {
-            this.props.label && <View style={styles.container}>
+            !!this.props.label && <View style={styles.container}>
               {
                 React.isValidElement(this.props.label) ? this.props.label :
                 <View style={[styles.label, { width: this.props.labelWidth }]}>

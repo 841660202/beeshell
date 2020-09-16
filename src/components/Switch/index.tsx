@@ -158,7 +158,8 @@ export class Switch extends Component<SwitchProps, SwitchState> {
       {
         toValue: value ? this.offset : -this.offset,
         duration: 200,
-        easing: Easing.linear
+        easing: Easing.linear,
+        useNativeDriver: false
       }
     ).start(callback)
   }
@@ -170,7 +171,8 @@ export class Switch extends Component<SwitchProps, SwitchState> {
       {
         toValue: value,
         duration: 200,
-        easing: Easing.linear
+        easing: Easing.linear,
+        useNativeDriver: false
       }
     ).start(callback)
   }

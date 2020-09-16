@@ -2,11 +2,13 @@ import variables from '../../common/styles/variables'
 
 export default {
   container: {
-    backgroundColor: variables.mtdFillBase
+    backgroundColor: variables.mtdFillBase,
+    height: 40,
   },
 
   content: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    height: 40,
   },
 
   item: {

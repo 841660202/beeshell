@@ -7,7 +7,8 @@ import {
   TouchableHighlight,
   Dimensions,
   Platform,
-  StatusBar
+  StatusBar,
+  UIManager, findNodeHandle
 } from 'react-native'
 import { Popover, Button } from '../../src'
 import styles from '../common/styles'
@@ -90,7 +91,9 @@ export default class PopoverScreen extends Component<{}, any> {
         }}
         size='sm'
         onPress={() => {
-          this.btnA.measure((fx, fy, width, height, px, py) => {
+          const handle = findNodeHandle(this.btnA) // 写错报
+            /*Argument 0 (NSNumber) of UIManager.measure must not be null*/
+            UIManager.measure(handle,(fx, fy, width, height, px, py) => {
             this.setState({
               offsetX: px + 130,
               offsetY: py
@@ -127,7 +130,8 @@ export default class PopoverScreen extends Component<{}, any> {
         }}
         size='sm'
         onPress={() => {
-          this.btnB.measure((fx, fy, width, height, px, py) => {
+          const handle = findNodeHandle(this.btnB)
+            UIManager.measure(handle, (fx, fy, width, height, px, py) => {
             this.setState({
               offsetXB: px + width,
               offsetYB: py + height

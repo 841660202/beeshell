@@ -121,7 +121,7 @@ export default class ScrollpickerScreen extends React.Component<any, any> {
                     flexDirection: 'row',
                     paddingVertical: 10
                   }}>
-                  {item ? <Icon type='star' size={20} tintColor='#000' /> : '' }
+                  {!!item ? <Icon type='star' size={20} tintColor='#000' /> : '' }
                   <Text
                     style={{
                       color: variables.mtdBrandPrimary,

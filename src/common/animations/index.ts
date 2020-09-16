@@ -62,9 +62,9 @@ export class FadeAnimated extends CommonAnimated {
 
   getPropertyValue (type, tag) {
     if (tag) {
-      return this.state[type + 'List'][0]
+      return this.state[type + 'List'][0] || 0;
     } else {
-      return this.state[type + 'List'][1]
+      return this.state[type + 'List'][1] || 0;
     }
   }
 
@@ -116,21 +116,25 @@ export class FadeAnimated extends CommonAnimated {
 
       this.animated = Animated.parallel([
         Animated.timing(this.state.opacity, {
+          useNativeDriver: false,
           toValue: this.getPropertyValue('opacity', !tag),
           duration: this.state.opacityDuration || this.state.duration,
           easing: this.state.easing
         }),
         Animated.timing(this.state.scale, {
+          useNativeDriver: false,
           toValue: this.getPropertyValue('scale', !tag),
           duration: this.state.scaleDuration || this.state.duration,
           easing: this.state.easing
         }),
         Animated.timing(this.state.translateX, {
+          useNativeDriver: false,
           toValue: this.getPropertyValue('translateX', !tag),
           duration: this.state.duration,
           easing: this.state.easing
         }),
         Animated.timing(this.state.translateY, {
+          useNativeDriver: false,
           toValue: this.getPropertyValue('translateY', !tag),
           duration: this.state.duration,
           easing: this.state.easing
@@ -249,6 +253,7 @@ export class SlideAnimated extends CommonAnimated {
 
       this.animated = Animated.parallel([
         Animated.timing(this.state.opacity, {
+          useNativeDriver: false,
           toValue: this.getPropertyValue('opacity', !tag),
           duration: this.state.duration,
           easing: this.state.easing
