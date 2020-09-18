@@ -1,10 +1,29 @@
 {
-  
-  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../dist"
+    "outDir": "../dist/",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "module": "es2020", // 输出的代码可以看得懂 es2020 commonjs不好看了
+    "target": "es6",
+    "moduleResolution": "node",
+    "jsx": "react-native",
+    "allowJs": true,
+    "declaration": true,
+    "alwaysStrict": false,
+    "esModuleInterop": true,
+    "types": [],
+    "lib": ["es6"]
   },
   "include": [
-    "./**/*"
+    "custom.ts", //文件路径
+    "../src/**/*"
+  ],
+  "exclude": [
+    "../examples/*",
+    "node_modules",
+    "node_modules/*",
+    "./node_modules",
+    "./node_modules/*",
+    "./node_modules/@types/node/index.d.ts"
   ]
 }

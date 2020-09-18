@@ -233,7 +233,17 @@ export class Switch extends Component<SwitchProps, SwitchState> {
       marginHorizontal: (switchHeight - rockerSizeMap[rockerSize]) / 2 - 1,
       borderRadius: switchHeight / 2,
       shadowColor: disabled ? disabledShadowColor : defaultShadowColor,
-      shadowOffset: { h : 2, w : 2 },
+      /**
+       * 
+        src/components/Switch/index.tsx:252:34 - error TS2322: Type '{ backgroundColor: Animated.AnimatedInterpolation; width: Animated.Value; height: number; marginHorizontal: number; borderRadius: number; shadowColor: any; shadowOffset: { ...; }; shadowRadius: number; shadowOpacity: number; transform: { ...; }[]; borderColor: any; }' is not assignable to type 'false | RegisteredStyle<ViewStyle> | Value | AnimatedInterpolation | WithAnimatedObject<ViewStyle> | WithAnimatedArray<...> | readonly (false | ... 3 more ... | WithAnimatedObject<...>)[]'.
+          Type '{ backgroundColor: Animated.AnimatedInterpolation; width: Animated.Value; height: number; marginHorizontal: number; borderRadius: number; shadowColor: any; shadowOffset: { ...; }; shadowRadius: number; shadowOpacity: number; transform: { ...; }[]; borderColor: any; }' is not assignable to type 'WithAnimatedObject<ViewStyle>'.
+            Types of property 'shadowOffset' are incompatible.
+              Type '{ h: number; w: number; }' is missing the following properties from type 'WithAnimatedObject<{ width: number; height: number; }>': width, height
+            252 <Animated.View style={[this.getRockerBaseStyle(), {
+            Found 1 error.
+
+       */
+      shadowOffset: { height : 2, width : 2 },
       shadowRadius: 2,
       shadowOpacity: 0.8,
       transform: [{ translateX: interpolatedTranslateX }],

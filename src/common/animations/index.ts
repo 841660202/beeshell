@@ -244,10 +244,23 @@ export class SlideAnimated extends CommonAnimated {
       })
 
       const parallelArray = keys.map((key: any) => {
+        /**
+         * src/common/animations/index.ts:247:49 - error TS2345: Argument of type '{ toValue: any; duration: any; easing: any; }' is not assignable to parameter of type 'TimingAnimationConfig'.
+  Property 'useNativeDriver' is missing in type '{ toValue: any; duration: any; easing: any; }' but required in type 'TimingAnimationConfig'.
+247         return Animated.timing(this.state[key], {                                            ~
+248           toValue: this.getPropertyValue(key, !tag),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+250           easing: this.state.easing
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+251         })
+    ~~~~~~~~~
+         */
         return Animated.timing(this.state[key], {
           toValue: this.getPropertyValue(key, !tag),
           duration: this.state.duration,
-          easing: this.state.easing
+          easing: this.state.easing,
+          useNativeDriver: false
         })
       })
 
