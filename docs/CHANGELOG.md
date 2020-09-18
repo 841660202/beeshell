@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 [![npm version](https://img.shields.io/npm/v/beeshell.svg)](https://www.npmjs.com/package/beeshell)
 
+## 0.0.1
+*2019-07-01*
+
+**🐛 Fixed**
+
+- react-native 0.60+无法使用的问题
 
 
 ## 2.0.11

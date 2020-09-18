@@ -1,15 +1,26 @@
 {
   "name": "beeshell-next",
-  "version": "0.0.1",
-  "description": "beeshell-next follow beeshell, fix beeshell bugs and facing the future of react-native ",
+  "version": "0.0.2",
+  "description": "beeshell-next follow beeshell, fix beeshell bugs and facing the future of react-native, support typescript ",
+  "author": "841660202@qq.com",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && tsc -p ./src",
-    "release": "tsc"
+    "plsh": "npm run build && cp ./package.json ./dist/ && cp ./Npm.md ./dist/README.md && npm publish dist"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/841660202/beeshell-next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/841660202/beeshell-next/issues"
+  },
+  "keywords": [
+    "react-native",
+    "meituan",
+    "beeshell"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@types/react-native": "^0.63.18",
