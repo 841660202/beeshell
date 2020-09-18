@@ -16,8 +16,8 @@ import variables from '../../common/styles/variables'
 import sliderStyles from './styles'
 import Coord from './Coord'
 
-const thumbImage = require('./images/rectangle.png')
-const otherThumbImage = require('./images/rectangle.png')
+const thumbImage = require('../../common/images/rectangle.png')
+const otherThumbImage = require('../../common/images/rectangle.png')
 
 export interface SliderProps {
   style?: ViewStyle | RegisteredStyle<ViewStyle>
