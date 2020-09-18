@@ -1,13 +1,13 @@
 {
   "name": "beeshell-next",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "beeshell-next follow beeshell, fix beeshell bugs and facing the future of react-native, support typescript ",
   "author": "841660202@qq.com",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && tsc -p ./src",
-    "plsh": "npm run build && cp ./package.json ./dist/ && cp ./Npm.md ./dist/README.md && npm publish dist"
+    "plsh": "npm run build && cp ./package.json ./dist/ && cp -r ./src/common/images dist/common/ && cp ./Npm.md ./dist/README.md && npm publish dist"
   },
   "repository": {
     "type": "git",
