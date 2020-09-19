@@ -1,6 +1,6 @@
 {
   "name": "beeshell-next",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "beeshell-next follow beeshell, fix beeshell bugs and facing the future of react-native, support typescript ",
   "author": "841660202@qq.com",
   "main": "index.js",
